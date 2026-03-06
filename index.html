@@ -272,6 +272,7 @@
           <p>
             We introduce inverse pairing strategy in which tool and anatomical motions are extracted from real surgical videos and replayed in the simulator, producing large-scale paired simulated and real videos. The simulator also produces corresponding segmentations. We start by segmenting pupil and iris employing nnU-Net, and corresponding segmentations are fitted with ellipses to obtain compact geometric parameters and encoding centroid, orientation, and axis lengths. Motion of the eye globe decomposes into global and local components. Global motion, arising from camera or patient movement, is estimated by annotating skin landmarks in the first frame and tracking them over time using pre-trained CoTracker. The resulting trajectories define a global transformation used to estimate the displacement of the eye globe centroid. Local motion corresponds to rotational movement of the eye globe and is derived from the centroid trajectory of the pupil mask, yielding rotational parameters. Tool kinematics are recovered from tool masks generated using SASVi and SAM2-based manual interactive annotation tool. From these masks, we extract geometric parameters like tool tip position, orientation, and articulation parameters such as bending angle and opening angle.
           </p>
+          
         </div>
         <div class="video-container">
           <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 30px;">
