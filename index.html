@@ -207,21 +207,29 @@
   <div class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-centered has-text-centered"></div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
         <h2 class="title is-4 has-text-centered" style="margin-bottom: 10px;margin-top: 30px">Unsupervised Video Style Transfer</h2>
-          <div class="video-container">
-            <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 30px;">
+          <div class="content has-text-justified">
+          <p>
+            We utilise the simulated sequence from the source domain with the initial-frame conditioning from the target domain to synthesise videos in the target style.
+          </p>
+        </div>  
+        <div class="video-container">
+            <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 10px;">
                 <source src="static/videos/supplementary_c1_cat1k_cats50_edit.mp4" type="video/mp4">
             </video>
             <h2 class="title is-5 vertical-text">Cataract-1k to CATARACTS</h2>
           </div>
           <br>
           <div class="video-container">
-            <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 30px;">
+            <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 10px;">
                 <source src="static/videos/supplementary_c2_cats50_cat1k_edit.mp4" type="video/mp4">
             </video>
             <h2 class="title is-5 vertical-text">CATARACTS to Cataract-1k</h2>
           </div>
+          </div>
+      </div>
     </div>
   </div>
 </section>
@@ -231,13 +239,23 @@
   <div class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-centered has-text-centered"></div>
-        <h2 class="title is-4 has-text-centered" style="margin-bottom: 10px;margin-top: 30px">Generalisation to Novel Tool Motion</h2>
-          <div class="video-container">
-            <video max-width="100%" playsinline autoplay loop preload muted style="margin-bottom: 30px;">
-                <source src="static/videos/supplementary_d1_ood_edit.mp4" type="video/mp4">
-            </video>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-centered" style="margin-bottom:10px; margin-top:15px">Generalisation to Novel Tool Motion</h2>
+        <div class="content has-text-justified">
+          <p>
+            By introducing an intermediate simulated sequence representation that provides explicit structural and motion guidance, we further push the boundaries of what the model can handle. Using the simulator, we generate difficult cases, including tools with novel entry directions and tool combinations that never co-occur in the training data.
+          </p>
         </div>
+        <div style="text-align:center;">
+          <video playsinline autoplay loop muted preload="auto"
+                 style="max-width:100%; height:auto; display:block; margin:0 auto 10px auto;">
+            <source src="static/videos/supplementary_d1_ood_edit.mp4" type="video/mp4">
+          </video>
+        </div>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -247,17 +265,27 @@
   <div class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-centered has-text-centered"></div>
-        <h2 class="title is-4 has-text-centered" style="margin-bottom: 10px;margin-top: 30px">Real Video vs Simulated Video</h2>
-          <div class="video-container">
-            <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 30px;">
-                <source src="static/videos/supplementary_e_ann_edit.mp4" type="video/mp4">
-            </video>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-centered" style="margin-bottom: 20px;margin-top: 30px">Inverse Pairing Strategy: Real Video and its Simulated Video</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce inverse pairing strategy in which tool and anatomical motions are extracted from real surgical videos and replayed in the simulator, producing large-scale paired simulated and real videos. The simulator also produces corresponding segmentations. We start by segmenting pupil and iris employing nnU-Net, and corresponding segmentations are fitted with ellipses to obtain compact geometric parameters and encoding centroid, orientation, and axis lengths. Motion of the eye globe decomposes into global and local components. Global motion, arising from camera or patient movement, is estimated by annotating skin landmarks in the first frame and tracking them over time using pre-trained CoTracker. The resulting trajectories define a global transformation used to estimate the displacement of the eye globe centroid. Local motion corresponds to rotational movement of the eye globe and is derived from the centroid trajectory of the pupil mask, yielding rotational parameters. Tool kinematics are recovered from tool masks generated using SASVi and SAM2-based manual interactive annotation tool. From these masks, we extract geometric parameters like tool tip position, orientation, and articulation parameters such as bending angle and opening angle.
+          </p>
+        </div>
+        <div class="video-container">
+          <video width="100%" playsinline autoplay loop preload muted style="margin-bottom: 30px;">
+            <source src="static/videos/supplementary_e_ann_edit.mp4" type="video/mp4">
+          </video>
+        </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 <br>
+
 <!-- End Experiments -->
 
 
